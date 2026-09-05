@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bueno Tec | Tecnologia, praticidade e variedade</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="cabecalho-principal">
+            <!-- LOGO -->
+            <a href="/" class="logo-link">
+
+                <img src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Logotipo da Bueno Tec"
+                    class="logo-site">
+
+            </a>
+            <!-- BUSCA -->
+            <form class="busca-container">
+                <input type="search" id="campoBusca" placeholder="O que você está procurando?"
+                    aria-label="Pesquisar produtos">
+
+                <button type="submit" class="botao-busca" aria-label="Pesquisar">
+                    🔍
+                </button>
+            </form>
+            <!-- CARRINHO -->
+            <div class="carrinho-wrapper">
+                <button type="button" class="carrinho-header" id="botaoCarrinho">
+                    <span class="icone-carrinho">
+                        🛒
+                    </span>
+                    <span class="texto-carrinho">
+                        Carrinho
+                    </span>
+                    <span class="contador-carrinho" aria-live="polite">
+                        0
+                    </span>
+
+                </button>
+
+                <div class="carrinho-menu" id="carrinhoMenu">
+
+                    <h3>Seu Carrinho</h3>
+
+                    <div class="carrinho-itens" id="carrinhoItens">
+                        <p>Seu carrinho está vazio.</p>
+                    </div>
+
+                    <div class="carrinho-total">
+
+                        <strong>Total:</strong> R$ <span id="carrinhoTotal">0.00</span>
+
+                    </div>
+
+                    <button type="button" class="botao-finalizar" id="botaoFinalizar">
+                        Finalizar Compra
+                    </button>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+        <!-- MENU DE NAVEGAÇÃO -->
+
+        <nav aria-label="Menu principal">
+
+            <ul class="menu-centralizado">
+
+                <li>
+                    <a href="/">
+                        Página Inicial
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/produtos">
+                        Produtos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#ofertas">
+                        Ofertas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#categorias">
+                        Categorias
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#sobre">
+                        Sobre nós
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/contato">
+                        Contato
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+        <!-- BANNER -->
+        <section class="banner-principal" id="inicio">
+
+            <h2>Grandes Ofertas de Inauguração!</h2>
+
+            <p>Os melhores produtos com os menores preços do mercado.</p>
+
+            <a href="#ofertas" class="botao-banner">Aproveitar Ofertas</a>
+
+        </section>
+        <!-- CATEGORIAS -->
+        <section class="categorias" id="categorias">
+
+            <div class="cabecalho-categorias">
+
+                <h2 class="titulo-secao">
+                    Categorias
+                </h2>
+
+                <a href="#" class="ver-todas" id="verTodas">
+                    Ver todas →
+                </a>
+
+            </div>
+
+
+            <div class="grade-categorias">
+
+                <a href="#" class="card-categoria">
+                    <div class="imagem-container">
+                        <img src="{{ url_for('static', filename='imagens/roupas.jpg') }}" alt="Roupas">
+                    </div>
+
+                    <span class="legenda-categoria">
+                        Roupas
+                    </span>
+                </a>
+
+
+                <a href="#" class="card-categoria">
+                    <div class="imagem-container">
+                        <img src="{{ url_for('static', filename='imagens/calcados.jpg') }}" alt="Calçados">
+                    </div>
+
+                    <span class="legenda-categoria">
+                        Calçados
+                    </span>
+                </a>
+
+
+                <a href="#" class="card-categoria">
+                    <div class="imagem-container">
+                        <img src="{{ url_for('static', filename='imagens/acessorios.jpg') }}" alt="Acessórios">
+                    </div>
+
+                    <span class="legenda-categoria">
+                        Acessórios
+                    </span>
+                </a>
+
+
+                <a href="#" class="card-categoria">
+                    <div class="imagem-container">
+                        <img src="{{ url_for('static', filename='imagens/bolsas.jpg') }}" alt="Bolsas">
+                    </div>
+
+                    <span class="legenda-categoria">
+                        Bolsas
+                    </span>
+                </a>
+
+
+                <a href="#" class="card-categoria">
+                    <div class="imagem-container">
+                        <img src="{{ url_for('static', filename='imagens/eletronicos.jpg') }}" alt="Eletrônicos">
+                    </div>
+
+                    <span class="legenda-categoria">
+                        Eletrônicos
+                    </span>
+                </a>
+
+
+                <a href="#" class="card-categoria">
+                    <div class="imagem-container">
+                        <img src="{{ url_for('static', filename='imagens/casa.jpg') }}" alt="Casa">
+                    </div>
+
+                    <span class="legenda-categoria">
+                        Casa
+                    </span>
+                </a>
+
+
+                <a href="#" class="card-categoria">
+                    <div class="imagem-container">
+                        <img src="{{ url_for('static', filename='imagens/ferramentas.jpg') }}" alt="Ferramentas">
+                    </div>
+
+                    <span class="legenda-categoria">
+                        Ferramentas
+                    </span>
+                </a>
+
+
+                <a href="#" class="card-categoria">
+                    <div class="imagem-container">
+                        <img src="{{ url_for('static', filename='imagens/jogos.jpg') }}" alt="Brinquedos">
+                    </div>
+
+                    <span class="legenda-categoria">
+                        Brinquedos
+                    </span>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!--PRODUTOS EM DESTAQUE-->
+        <section class="produtos-destaque" id="produtos">
+
+            <div class="cabecalho-produtos">
+
+                <h2 class="titulo-secao">
+                    Produtos em Destaque
+                </h2>
+
+                <a href="/produtos" class="ver-todos-produtos">
+                    Ver todos →
+                </a>
+
+            </div>
+
+            <div class="grade-produtos">
+
+                <!-- PRODUTO 1 -->
+                <article class="card-produto">
+
+                    <div class="imagem-produto">
+
+                        <img src="{{ url_for('static', filename='imagens/extensao.jpg') }}"
+                            alt="Extensão Elétrica 10A Bivolt">
+
+                    </div>
+
+                    <div class="informacoes-produto">
+
+                        <h3>
+                            Extensão Elétrica 10A Bivolt
+                        </h3>
+
+                        <p class="marca-produto">
+                            Prismatec
+                        </p>
+
+                        <p class="categoria-produto">
+                            Eletrônicos
+                        </p>
+
+                        <strong class="preco-produto">
+                            R$ 35,00
+                        </strong>
+
+                        <button type="button" class="botao-adicionar">
+                            Adicionar ao carrinho
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 2 -->
+                <article class="card-produto">
+
+                    <div class="imagem-produto">
+
+                        <img src="{{ url_for('static', filename='imagens/processador.jpg') }}"
+                            alt="Processador Manual de Alimentos 900ml">
+
+                    </div>
+
+                    <div class="informacoes-produto">
+
+                        <h3>
+                            Processador Manual de Alimentos 900ml
+                        </h3>
+
+                        <p class="marca-produto">
+                            Shock Imports
+                        </p>
+
+                        <p class="categoria-produto">
+                            Casa
+                        </p>
+
+                        <strong class="preco-produto">
+                            R$ 35,00
+                        </strong>
+
+                        <button type="button" class="botao-adicionar">
+                            Adicionar ao carrinho
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 3 -->
+                <article class="card-produto">
+
+                    <div class="imagem-produto">
+
+                        <img src="{{ url_for('static', filename='imagens/secador.jpg') }}"
+                            alt="Secador de Cabelo Bee Electrics HD-3201">
+
+                    </div>
+
+                    <div class="informacoes-produto">
+
+                        <h3>
+                            Secador de Cabelo Bee Electrics HD-3201
+                        </h3>
+
+                        <p class="marca-produto">
+                            Bee Electrics
+                        </p>
+
+                        <p class="categoria-produto">
+                            Beleza
+                        </p>
+
+                        <strong class="preco-produto">
+                            R$ 85,00
+                        </strong>
+
+                        <button type="button" class="botao-adicionar">
+                            Adicionar ao carrinho
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUTO 4 -->
+                <article class="card-produto">
+
+                    <div class="imagem-produto">
+
+                        <img src="{{ url_for('static', filename='imagens/talheres.jpg') }}"
+                            alt="Jogo de Talheres 25 Peças IDee Home">
+
+                    </div>
+
+                    <div class="informacoes-produto">
+
+                        <h3>
+                            Jogo de Talheres 25 Peças IDee Home
+                        </h3>
+
+                        <p class="marca-produto">
+                            IDee Home
+                        </p>
+
+                        <p class="categoria-produto">
+                            Móveis e Decoração
+                        </p>
+
+                        <strong class="preco-produto">
+                            R$ 45,00
+                        </strong>
+
+                        <button type="button" class="botao-adicionar">
+                            Adicionar ao carrinho
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+        <!--OFERTAS-->
+        <section class="ofertas" id="ofertas">
+
+            <div class="cabecalho-ofertas">
+
+                <h2 class="titulo-secao">
+                    Ofertas Especiais
+                </h2>
+
+                <p>
+                    Aproveite nossos preços promocionais!
+                </p>
+
+            </div>
+
+            <div class="grade-ofertas">
+
+                <!-- OFERTA 1 -->
+                <article class="card-oferta">
+
+                    <div class="imagem-oferta">
+
+                        <img src="{{ url_for('static', filename='imagens/eletronicos.jpg') }}" alt="Smartwatch Pulse 5">
+
+                        <span class="desconto">
+                            -18%
+                        </span>
+
+                    </div>
+
+                    <div class="informacoes-oferta">
+
+                        <h3>
+                            Smartwatch Pulse 5
+                        </h3>
+
+                        <p class="marca-oferta">
+                            TechWave
+                        </p>
+
+                        <p class="preco-antigo">
+                            R$ 399,00
+                        </p>
+
+                        <strong class="preco-oferta">
+                            R$ 329,00
+                        </strong>
+
+                        <button type="button" class="botao-oferta">
+                            Comprar agora
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- OFERTA 2 -->
+                <article class="card-oferta">
+
+                    <div class="imagem-oferta">
+
+                        <img src="{{ url_for('static', filename='imagens/audio.jpg') }}" alt="Caixa de Som Portátil">
+
+                        <span class="desconto">
+                            -22%
+                        </span>
+
+                    </div>
+
+                    <div class="informacoes-oferta">
+
+                        <h3>
+                            Caixa de Som Portátil
+                        </h3>
+
+                        <p class="marca-oferta">
+                            SoundX
+                        </p>
+
+                        <p class="preco-antigo">
+                            R$ 540,00
+                        </p>
+
+                        <strong class="preco-oferta">
+                            R$ 420,00
+                        </strong>
+
+                        <button type="button" class="botao-oferta">
+                            Comprar agora
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- OFERTA 3 -->
+                <article class="card-oferta">
+
+                    <div class="imagem-oferta">
+
+                        <img src="{{ url_for('static', filename='imagens/casa.jpg') }}"
+                            alt="Kit Organização de Cozinha">
+
+                        <span class="desconto">
+                            -15%
+                        </span>
+
+                    </div>
+
+                    <div class="informacoes-oferta">
+
+                        <h3>
+                            Kit Organização de Cozinha
+                        </h3>
+
+                        <p class="marca-oferta">
+                            HomeCo
+                        </p>
+
+                        <p class="preco-antigo">
+                            R$ 210,00
+                        </p>
+
+                        <strong class="preco-oferta">
+                            R$ 178,00
+                        </strong>
+
+                        <button type="button" class="botao-oferta">
+                            Comprar agora
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!--DIFERENCIAIS-->
+        <section class="sobre" id="sobre">
+
+            <div class="sobre-conteudo">
+
+                <h2 class="titulo-secao">
+                    Sobre a Bueno TEC
+                </h2>
+
+                <p>
+                    A Bueno TEC nasceu com o objetivo de oferecer produtos
+                    variados, tecnologia, praticidade e bons preços em um
+                    único lugar.
+                </p>
+
+                <p>
+                    Trabalhamos para proporcionar uma experiência de compra
+                    simples, segura e acessível, buscando sempre oferecer
+                    produtos de qualidade e um atendimento próximo aos nossos
+                    clientes.
+                </p>
+
+                <ul class="lista-sobre">
+
+                    <li>
+                        Variedade de produtos
+                    </li>
+
+                    <li>
+                        Preços competitivos
+                    </li>
+
+                    <li>
+                        Compra simples e segura
+                    </li>
+
+                    <li>
+                        Atendimento de qualidade
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <section class="diferenciais">
+
+            <h2 class="titulo-secao">
+                Por que comprar na Bueno TEC?
+            </h2>
+
+            <div class="grade-diferenciais">
+
+                <article class="card-diferencial">
+
+                    <span class="icone-diferencial">
+                        🚚
+                    </span>
+
+                    <h3>
+                        Entrega rápida
+                    </h3>
+
+                    <p>
+                        Enviamos seus produtos com agilidade e segurança.
+                    </p>
+
+                </article>
+
+
+                <article class="card-diferencial">
+
+                    <span class="icone-diferencial">
+                        🔒
+                    </span>
+
+                    <h3>
+                        Pagamento seguro
+                    </h3>
+
+                    <p>
+                        Suas informações são tratadas com segurança durante
+                        a compra.
+                    </p>
+
+                </article>
+
+
+                <article class="card-diferencial">
+
+                    <span class="icone-diferencial">
+                        💬
+                    </span>
+
+                    <h3>
+                        Atendimento de qualidade
+                    </h3>
+
+                    <p>
+                        Estamos disponíveis para ajudar antes e depois da
+                        sua compra.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!--NEWSLETTER-->
+        <section class="newsletter">
+
+            <div class="newsletter-conteudo">
+
+                <h2>
+                    Receba nossas novidades
+                </h2>
+
+                <p>
+                    Cadastre seu e-mail e fique por dentro das ofertas,
+                    novidades e promoções da Bueno TEC.
+                </p>
+
+                <form class="formulario-newsletter">
+
+                    <input type="email" id="emailNewsletter" placeholder="Digite seu melhor e-mail"
+                        aria-label="Seu e-mail" required>
+
+                    <button type="submit">
+                        Cadastrar
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+
+    <footer class="rodape">
+
+        <div class="rodape-conteudo">
+
+            <!-- EMPRESA -->
+            <div class="rodape-coluna">
+
+                <img src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Logotipo Bueno Tec"
+                    class="logo-rodape">
+
+                <p>
+                    Tecnologia, praticidade e variedade em um só lugar.
+                </p>
+
+            </div>
+
+
+            <!-- INSTITUCIONAL -->
+            <div class="rodape-coluna">
+
+                <h3>
+                    Institucional
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#sobre">
+                            Sobre nós
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/produtos">
+                            Produtos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#ofertas">
+                            Ofertas
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#categorias">
+                            Categorias
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- ATENDIMENTO -->
+            <div class="rodape-coluna">
+
+                <h3>
+                    Atendimento
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="/contato">
+                            Fale conosco
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/contato">
+                            Entre em contato
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- REDES SOCIAIS -->
+            <div class="rodape-coluna">
+
+                <h3>
+                    Redes sociais
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#">
+                            Instagram
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Facebook
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            WhatsApp
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="rodape-final">
+
+            <p>
+                © 2026 Bueno TEC. Todos os direitos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
