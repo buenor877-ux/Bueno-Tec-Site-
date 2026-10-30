@@ -88,13 +88,116 @@ Tarefas realizadas hoje [✔] ➜ data de conclusão da tarefa 05/09/2026 horari
 ⏭️ Próxima etapa: JavaScript, começando pelo carrinho de compras.
 
 
-Tarefas previstas para amanhã [⏳] data 06/09/2026 horario de conclusão não definido
-1. Corrigir os pequenos detalhes visuais restantes
-2. Começar o script.js
-3. Fazer o JavaScript controlar o carrinho
-4. Pesquisa de produtos
-5. Botões e interações
-6. Categorias / "Ver todas"
-7. Newsletter e demais comportamentos
+Tarefas previstas para amanhã [⏳] data 08/09/2026 horario de conclusão 00:04
+ Verificado o carregamento do script.js no index.html.
+ Criada referência para o contador do carrinho.
+ Criada referência para o valor total do carrinho.
+ Criada referência para a área de itens do carrinho.
+ Identificados os botões Adicionar ao carrinho.
+ Adicionado evento de clique aos botões.
+ Implementada identificação automática do produto selecionado.
+ Implementada captura do nome do produto.
+ Implementada captura do preço do produto.
+ Implementada conversão do preço de R$ 35,00 para número.
+ Criado objeto produtoCarrinho.
+ Criado array carrinho.
+ Implementado armazenamento dos produtos no array.
+ Implementada exibição dos produtos dentro do carrinho.
+ Removida automaticamente a mensagem "Seu carrinho está vazio" ao adicionar o primeiro produto.
+ Implementado contador de produtos.
+ Implementado cálculo do valor total.
+ Implementada atualização do total na tela.
+ Implementada identificação de produtos repetidos usando .find().
+ Implementado controle de quantidade do mesmo produto.
+ Implementado aumento da quantidade através de quantidade++.
+ Implementada abertura do menu do carrinho.
+ Implementado fechamento do menu do carrinho.
+ Adicionada classe CSS .carrinho-menu.ativo.
+ Testado o funcionamento do carrinho pelo console do navegador.
+ Confirmado que um mesmo produto pode possuir uma quantidade em vez de criar vários objetos iguais.
+ Conceitos de JavaScript praticados
+ querySelector()
+ querySelectorAll()
+ forEach()
+ addEventListener()
+ closest()
+ textContent
+ trim()
+ replace()
+ Number()
+ Arrays
+ Objetos
+ push()
+ find()
+ if / else
+ Operador !
+ Incremento ++
+ innerHTML
+ Template literals
+ toFixed()
+ classList.toggle()
+
+Data: 09/09/2026
+Status: Em desenvolvimento
+
+✅ O que foi feito hoje
+Ajustes na seção de Categorias
+Trabalhamos na estrutura visual da seção.
+Ajustamos o posicionamento do título “Categorias”.
+Buscamos aproximar o layout do modelo de referência apresentado pelo usuário.
+Foi definida a ideia de utilizar as categorias em um formato mais visual e organizado, semelhante ao padrão de grandes lojas virtuais.
+Organização do cabeçalho das categorias
+Ajustamos o .cabecalho-categorias.
+Trabalhamos com flexbox para controlar:
+alinhamento;
+centralização;
+espaçamento;
+posição do título.
+Referência visual
+Utilizamos como referência o estilo apresentado de uma loja virtual.
+A intenção passou a ser deixar o Bueno Tec com uma aparência mais próxima de um e-commerce profissional, em vez de apenas uma página de estudos.
+Ajustes de layout
+Foram feitos testes com espaçamentos e posicionamento dos elementos.
+Alguns ajustes anteriores também foram realizados na organização das seções do site, incluindo a área de ofertas.
+Continuidade do projeto
+Mantivemos a estrutura atual de HTML + CSS + JavaScript + Flask/Python.
+O objetivo continua sendo evoluir o projeto gradualmente, sem simplesmente copiar um template pronto
+
+
+🔜 Próximas melhorias
+
+Eu sugiro seguirmos nesta ordem:
+
+1. 🛒 Finalizar visual das Categorias
+Ajustar tamanho dos cards.
+Ajustar imagens.
+Padronizar proporções.
+Melhorar espaçamento.
+Criar efeito hover.
+Fazer o layout funcionar bem no celular.
+2. 🏷️ Melhorar seção de Ofertas
+Padronizar os cards.
+Imagem do produto.
+Nome.
+Preço antigo.
+Preço promocional.
+Percentual de desconto.
+Botão Comprar ou Adicionar ao carrinho.
+3. 🧭 Melhorar o cabeçalho
+Logo Bueno Tec.
+Menu.
+Campo de pesquisa.
+Ícone/carrinho.
+Melhor adaptação para telas menores.
+4. 📱 Responsividade
+
+Testar o site em:
+
+computador;
+notebook;
+tablet;
+celular.
+
+E corrigir elementos que quebrarem ou ficarem desalinhados.
  
  
