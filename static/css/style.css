@@ -1480,3 +1480,48 @@ header nav {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* =========================
+   PÁGINA 404 (tela inteira, sem menu)
+========================= */
+
+.pagina-404 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+    text-align: center;
+    background:
+        radial-gradient(circle at 50% 30%, rgba(0, 180, 216, 0.18), transparent 60%),
+        var(--bg-principal);
+}
+
+.conteudo-404 {
+    max-width: 560px;
+}
+
+.numero-404 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(110px, 30vw, 240px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 6px;
+    color: var(--azul-logo);
+    text-shadow: 0 0 40px rgba(0, 180, 216, 0.45);
+}
+
+.titulo-404 {
+    margin: 10px 0 14px;
+    font-family: var(--fonte-titulo);
+    font-size: clamp(24px, 5vw, 34px);
+    font-weight: 600;
+    color: var(--texto-claro);
+}
+
+.texto-404 {
+    margin-bottom: 28px;
+    color: var(--texto-mutado);
+    line-height: 1.6;
+}

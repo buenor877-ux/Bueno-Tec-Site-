@@ -7,6 +7,17 @@
 
     <title>{% block titulo %}Bueno Tec | Tecnologia, praticidade e variedade{% endblock %}</title>
 
+    <!-- DESCRIÇÃO (aparece no Google e ao compartilhar o link) -->
+    <meta name="description" content="{% block descricao %}Bueno TEC: loja virtual de artigos eletrônicos e gerais. Produtos úteis para a casa e o dia a dia, com preço justo e atendimento pelo WhatsApp.{% endblock %}">
+    <meta name="theme-color" content="#0d0f12">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Bueno TEC">
+    <meta property="og:title" content="{{ self.titulo() }}">
+    <meta property="og:image" content="{{ url_for('static', filename='imagens/logo.png', _external=True) }}">
+
+    <!-- ÍCONE DA ABA DO NAVEGADOR -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/favicon.png') }}">
+
     <!-- FONTES: Rajdhani (títulos, menu, botões) e Inter (textos) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

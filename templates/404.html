@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+
+    <title>404 | Página não encontrada</title>
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/favicon.png') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<!-- Página 404 sozinha: sem menu, sem rodapé -->
+<body class="pagina-404">
+
+    <main class="conteudo-404">
+
+        <h1 class="numero-404">404</h1>
+
+        <p class="titulo-404">Página não encontrada</p>
+
+        <p class="texto-404">
+            Ops! O endereço que você digitou não existe ou foi alterado.
+            Deseja voltar para a página inicial?
+        </p>
+
+        <a href="{{ url_for('inicio') }}" class="botao-banner">Voltar para a página inicial</a>
+
+    </main>
+
+</body>
+
+</html>

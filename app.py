@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -91,6 +93,15 @@ def contato():
     return render_template("contato.html")
 
 
-# EXECUÇÃO DO SERVIDOR
+# PÁGINA 404 (endereço que não existe)
+@app.errorhandler(404)
+def pagina_nao_encontrada(erro):
+    return render_template("404.html"), 404
+
+
+# EXECUÇÃO DO SERVIDOR (no seu computador)
+# O modo "debug" só liga se você pedir. Na internet ele fica DESLIGADO,
+# porque mostra detalhes do código para qualquer visitante.
+# Para ligar no seu PC: no PowerShell, rode  $env:FLASK_DEBUG="1"  e depois  python app.py
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=os.environ.get("FLASK_DEBUG") == "1")
