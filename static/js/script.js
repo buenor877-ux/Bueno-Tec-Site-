@@ -37,7 +37,36 @@ const botoesOferta =
 // CARRINHO
 // ======================================================
 
-let carrinho = [];
+// O carrinho fica salvo no navegador, para não esvaziar ao trocar de página.
+function carregarCarrinho() {
+
+    try {
+
+        const salvo = JSON.parse(localStorage.getItem('carrinhoBuenoTec'));
+
+        if (Array.isArray(salvo)) {
+            return salvo;
+        }
+
+    } catch (erro) {
+        // sem armazenamento disponível: segue com carrinho vazio
+    }
+
+    return [];
+
+}
+
+function salvarCarrinho() {
+
+    try {
+        localStorage.setItem('carrinhoBuenoTec', JSON.stringify(carrinho));
+    } catch (erro) {
+        // ignora
+    }
+
+}
+
+let carrinho = carregarCarrinho();
 
 
 // ======================================================
@@ -135,6 +164,8 @@ function mostrarCarrinhoVazio() {
 
 function renderizarCarrinho() {
 
+    salvarCarrinho();
+
     carrinhoItens.innerHTML = '';
 
 
@@ -176,12 +207,6 @@ function renderizarCarrinho() {
 
             <p class="nome-produto-carrinho">
                 ${item.nome}
-            </p>
-
-
-            <p class="quantidade-produto-carrinho">
-                Quantidade:
-                ${item.quantidade}
             </p>
 
 
@@ -728,20 +753,29 @@ if (botaoFinalizar) {
             }
 
 
-            const total =
-                calcularTotal();
+            // Monta a mensagem do pedido e abre o WhatsApp da loja
+            let texto = 'Olá! Gostaria de fazer este pedido na Bueno TEC:\n\n';
+
+            carrinho.forEach(function (item) {
+
+                texto +=
+                    '• ' + item.quantidade + 'x ' + item.nome +
+                    ' - R$ ' + formatarPreco(item.preco * item.quantidade) +
+                    '\n';
+
+            });
+
+            texto +=
+                '\nTotal: R$ ' + formatarPreco(calcularTotal()) +
+                '\n\nPode me confirmar a disponibilidade e as formas de pagamento e entrega?';
 
 
-            alert(
-                'Compra iniciada! Total: R$ ' +
-                formatarPreco(total)
-            );
+            const link =
+                'https://wa.me/5545998076217?text=' +
+                encodeURIComponent(texto);
 
 
-            console.log(
-                'Pedido:',
-                carrinho
-            );
+            window.open(link, '_blank');
 
         }
     );
@@ -813,6 +847,53 @@ if (formularioBusca) {
                 }
 
             });
+
+        }
+    );
+
+}
+
+
+// ======================================================
+// FORMULÁRIO DE CONTATO (abre o WhatsApp com a mensagem pronta)
+// ======================================================
+
+const formContato =
+    document.querySelector('#formContato');
+
+
+if (formContato) {
+
+    formContato.addEventListener(
+        'submit',
+        function (evento) {
+
+
+            evento.preventDefault();
+
+
+            const nome =
+                document.querySelector('#contatoNome')
+                    .value
+                    .trim();
+
+
+            const mensagem =
+                document.querySelector('#contatoMensagem')
+                    .value
+                    .trim();
+
+
+            const texto =
+                'Olá! Meu nome é ' + nome + '. ' + mensagem;
+
+
+            const link =
+                'https://wa.me/5545998076217?text=' +
+                encodeURIComponent(texto);
+
+
+            window.open(link, '_blank');
 
         }
     );

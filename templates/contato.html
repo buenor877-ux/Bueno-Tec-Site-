@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block titulo %}Contato | Bueno Tec{% endblock %}
+
+{% block conteudo %}
+
+    <section class="contato">
+
+        <div class="cabecalho-pagina">
+
+            <h1 class="titulo-secao">
+                Fale com a Bueno TEC
+            </h1>
+
+            <p>
+                Tem dúvidas sobre um produto, um pedido ou a entrega?
+                Fale com a gente, vamos te ajudar.
+            </p>
+
+        </div>
+
+
+        <div class="contato-grade">
+
+            <!-- WHATSAPP -->
+            <article class="card-contato">
+
+                <h2>WhatsApp</h2>
+
+                <p class="destaque-contato">
+                    (45) 99807-6217
+                </p>
+
+                <p>
+                    A forma mais rápida de falar com a gente.
+                </p>
+
+                <a href="https://wa.me/5545998076217?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Bueno%20TEC."
+                    class="botao-whatsapp" target="_blank" rel="noopener">
+                    Chamar no WhatsApp
+                </a>
+
+            </article>
+
+            <!-- INSTAGRAM -->
+            <article class="card-contato">
+
+                <h2>Instagram</h2>
+
+                <p class="destaque-contato">
+                    Bueno Tec
+                </p>
+
+                <p>
+                    Acompanhe as novidades e ofertas da loja.
+                </p>
+
+                {# TODO: quando tiver o link do Instagram, colocar aqui um botão igual ao do WhatsApp #}
+
+            </article>
+
+        </div>
+
+
+        <!-- FORMULÁRIO: abre o WhatsApp já com a mensagem escrita -->
+        <form class="formulario-contato" id="formContato">
+
+            <h2>Envie sua mensagem</h2>
+
+            <p>
+                Preencha os campos e abriremos o WhatsApp com o texto pronto.
+            </p>
+
+            <div>
+                <label for="contatoNome">Seu nome</label>
+                <input type="text" id="contatoNome" placeholder="Como podemos te chamar?" required>
+            </div>
+
+            <div>
+                <label for="contatoMensagem">Mensagem</label>
+                <textarea id="contatoMensagem" rows="5" placeholder="Escreva aqui sua dúvida ou pedido"
+                    required></textarea>
+            </div>
+
+            <button type="submit">
+                Enviar pelo WhatsApp
+            </button>
+
+        </form>
+
+    </section>
+
+{% endblock %}

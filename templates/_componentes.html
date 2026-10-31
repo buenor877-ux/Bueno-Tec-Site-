@@ -1,0 +1,45 @@
+{# =========================================================
+   PEÇAS REUTILIZÁVEIS
+   O card de produto é desenhado aqui, uma vez só.
+   A home e a página Produtos usam este mesmo desenho.
+========================================================= #}
+
+{% macro card_produto(p, mostrar_descricao=False) %}
+<article class="card-produto">
+
+    <div class="imagem-produto">
+        <img src="{{ url_for('static', filename='imagens/' ~ p.imagem) }}" alt="{{ p.nome }}" loading="lazy">
+    </div>
+
+    <div class="informacoes-produto">
+
+        <h3>
+            {{ p.nome }}
+        </h3>
+
+        <p class="marca-produto">
+            {{ p.marca }}
+        </p>
+
+        <p class="categoria-produto">
+            {{ p.categoria }}
+        </p>
+
+        {% if mostrar_descricao %}
+        <p class="descricao-produto">
+            {{ p.descricao }}
+        </p>
+        {% endif %}
+
+        <strong class="preco-produto">
+            {{ p.preco | brl }}
+        </strong>
+
+        <button type="button" class="botao-adicionar">
+            Adicionar ao carrinho
+        </button>
+
+    </div>
+
+</article>
+{% endmacro %}
