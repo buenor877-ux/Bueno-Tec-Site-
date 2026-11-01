@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block titulo %}Produtos | Bueno Tec{% endblock %}
+{% block titulo %}{% if categoria %}{{ categoria }} | {% endif %}Produtos | Bueno Tec{% endblock %}
 
 {% block conteudo %}
 
@@ -11,15 +11,34 @@
         <div class="cabecalho-pagina">
 
             <h1 class="titulo-secao">
+                {% if busca %}
+                Resultados para “{{ busca }}”
+                {% elif categoria %}
+                {{ categoria }}
+                {% else %}
                 Nossos Produtos
+                {% endif %}
             </h1>
 
             <p>
+                {% if busca or categoria %}
+                {{ produtos | length }} produto(s) encontrado(s).
+                {% else %}
                 Variedade, praticidade e preço justo em um só lugar.
+                {% endif %}
             </p>
 
         </div>
 
+        <!-- FILTRO POR CATEGORIA -->
+        <nav class="filtros-categorias" aria-label="Filtrar por categoria">
+            <a href="{{ url_for('produtos') }}" class="chip-categoria {{ 'ativo' if not categoria and not busca else '' }}">Todos</a>
+            {% for c in categorias %}
+            <a href="{{ url_for('produtos', categoria=c) }}" class="chip-categoria {{ 'ativo' if c == categoria else '' }}">{{ c }}</a>
+            {% endfor %}
+        </nav>
+
+        {% if produtos %}
         <div class="grade-produtos">
 
             {% for p in produtos %}
@@ -27,6 +46,12 @@
             {% endfor %}
 
         </div>
+        {% else %}
+        <div class="sem-resultados">
+            <p>Não encontramos produtos para essa busca.</p>
+            <a href="{{ url_for('produtos') }}" class="botao-secundario">Ver todos os produtos</a>
+        </div>
+        {% endif %}
 
     </section>
 

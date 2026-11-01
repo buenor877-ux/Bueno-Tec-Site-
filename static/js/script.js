@@ -784,74 +784,8 @@ if (botaoFinalizar) {
 
 
 // ======================================================
-// BUSCA DE PRODUTOS
+// BUSCA: o formulário envia para /produtos?busca=... (feito no servidor)
 // ======================================================
-
-const formularioBusca =
-    document.querySelector('.busca-container');
-
-
-if (formularioBusca) {
-
-    formularioBusca.addEventListener(
-        'submit',
-        function (evento) {
-
-
-            evento.preventDefault();
-
-
-            const termo =
-                campoBusca.value
-                    .trim()
-                    .toLowerCase();
-
-
-            if (!termo) {
-
-                return;
-
-            }
-
-
-            const produtos =
-                document.querySelectorAll(
-                    '.card-produto'
-                );
-
-
-            produtos.forEach(function (produto) {
-
-
-                const nome =
-                    produto
-                        .querySelector('h3')
-                        .textContent
-                        .toLowerCase();
-
-
-                if (
-                    nome.includes(termo)
-                ) {
-
-                    produto.style.display =
-                        '';
-
-                }
-
-                else {
-
-                    produto.style.display =
-                        'none';
-
-                }
-
-            });
-
-        }
-    );
-
-}
 
 
 // ======================================================

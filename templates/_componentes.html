@@ -9,6 +9,7 @@
 
     <div class="imagem-produto">
         <img src="{{ url_for('static', filename='imagens/' ~ p.imagem) }}" alt="{{ p.nome }}" loading="lazy">
+        {% if p.exemplo %}<span class="selo-exemplo">Exemplo</span>{% endif %}
     </div>
 
     <div class="informacoes-produto">
@@ -17,9 +18,11 @@
             {{ p.nome }}
         </h3>
 
+        {% if p.marca %}
         <p class="marca-produto">
             {{ p.marca }}
         </p>
+        {% endif %}
 
         <p class="categoria-produto">
             {{ p.categoria }}

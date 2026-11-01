@@ -87,9 +87,14 @@ textarea {
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 
-    gap: 25px;
+    gap: 14px;
+}
+
+/* logo + busca ficam juntas; o carrinho vai para a direita */
+.carrinho-wrapper {
+    margin-left: auto;
 }
 
 
@@ -1524,4 +1529,65 @@ header nav {
     margin-bottom: 28px;
     color: var(--texto-mutado);
     line-height: 1.6;
+}
+
+
+/* =========================
+   FILTRO DE CATEGORIAS, SELO "EXEMPLO" E SEM RESULTADOS
+========================= */
+
+.filtros-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 35px;
+    max-width: 1000px;
+}
+
+.chip-categoria {
+    padding: 8px 16px;
+    border: 1px solid #303640;
+    border-radius: 999px;
+    background-color: var(--bg-cards);
+    color: var(--texto-mutado);
+    font-size: 14px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.chip-categoria:hover {
+    border-color: var(--azul-logo);
+    color: var(--texto-claro);
+}
+
+.chip-categoria.ativo {
+    border-color: var(--azul-logo);
+    background-color: var(--azul-logo);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.imagem-produto {
+    position: relative;
+}
+
+.selo-exemplo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background-color: rgba(13, 15, 18, 0.85);
+    color: var(--texto-mutado);
+    font-size: 12px;
+}
+
+.sem-resultados {
+    text-align: center;
+    color: var(--texto-mutado);
+    padding: 30px 0;
+}
+
+.sem-resultados p {
+    margin-bottom: 20px;
 }

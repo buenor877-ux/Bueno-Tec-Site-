@@ -43,8 +43,8 @@
             </a>
 
             <!-- BUSCA -->
-            <form class="busca-container">
-                <input type="search" id="campoBusca" placeholder="O que você está procurando?"
+            <form class="busca-container" action="{{ url_for('produtos') }}" method="get">
+                <input type="search" id="campoBusca" name="busca" value="{{ request.args.get('busca', '') }}" placeholder="O que você está procurando?"
                     aria-label="Pesquisar produtos">
 
                 <button type="submit" class="botao-busca" aria-label="Pesquisar">
@@ -194,21 +194,18 @@
                 <h3>Redes sociais</h3>
 
                 <ul>
-                    {# TODO: quando tiver o link do Instagram, troque <span class="item-rodape"> por
-                       <a href="LINK_AQUI" target="_blank" rel="noopener"> (e o </span> por </a>) #}
                     <li>
-                        <span class="item-rodape">
+                        <a href="https://www.instagram.com/bueno.tec" target="_blank" rel="noopener">
                             <svg class="icone-rodape" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
                             <span class="somente-leitor">Instagram:</span> Bueno Tec
-                        </span>
+                        </a>
                     </li>
 
-                    {# TODO: o mesmo para o Facebook, quando tiver o link #}
                     <li>
-                        <span class="item-rodape">
+                        <a href="https://www.facebook.com/profile.php?id=61554890115071" target="_blank" rel="noopener">
                             <svg class="icone-rodape" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                             <span class="somente-leitor">Facebook:</span> Bueno Tec
-                        </span>
+                        </a>
                     </li>
                 </ul>
 
