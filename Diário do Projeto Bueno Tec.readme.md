@@ -1,203 +1,163 @@
+Bueno TEC
 
-PROJETO: Bueno Tech
+Loja virtual de artigos de informática e utilidades para casa, desenvolvida com Python e Flask. Os pedidos são finalizados pelo WhatsApp da loja.
 
-Data de Inicio: 19/08/2026 14:00 da tarde
+Status: versão 1.0 concluída em 01/11/2026. Funciona localmente; ainda sem domínio próprio e sem hospedagem.
 
-Objetivo: Criar a estrutura inicial da página principal.
+Sumário
+Visão geral
+Tecnologias
+Funcionalidades
+Estrutura do projeto
+Como executar
+Como adicionar produtos
+Desenvolvimento
+Problemas e bugs corrigidos
+Próximos passos
+Autor
+1. Visão geral
 
-[✔] Concluído ➜
-**Estruturação Inicial e Layout Base** *(19/08/2026)*
-O que foi feito: Criação do design base do e-commerce Bueno Tec.
-Tecnologias: HTML5 estrutural e CSS Grid para responsividade.
-Implementações:
-Menu de navegação superior centralizado.
-Banner principal de inauguração com call-to-action (CTA).
-Grade de categorias adaptável (responsiva sem media queries).
-Próximos passos: Substituir os emojis das categorias por ícones SVG e criar a seção de produtos em destaque.
+A Bueno TEC é uma loja especializada em artigos de informática e uso geral para casa. O proprietário atua com vendas há mais de dois anos e, com o negócio sólido e em crescimento, criou este site para preparar a loja para uma etapa maior: levar os produtos a um público mais amplo, com interface simples, acessível e fluida.
 
+O projeto começou como prática e teste de conhecimentos. Ao longo do desenvolvimento, tornou-se uma ferramenta real para expandir a imagem e as vendas da loja.
 
-Próximo passo: (melhorias) [✔] Concluido ➜
-Substituição de Emojis por Ícones Reais ou Imagens
-Correção de Semântica e Acessibilidade (SEO): Hierarquia de Títulos, Tags Semânticas, Textos Alternativos (alt) descritivos e Correção de Caminhos Locais Absolutos ajustados.
-Ajuste no Separador do Menu Superior
-Adição de 4 produtos ao site, nome, descrição, preço, marca, foto.
-Ajuste nas paletas de cores em todo site, adição da logo marca, falta ajustar tamanho e contraste com o fundo do site.
+Como o cliente compra hoje: escolhe os produtos e as quantidades no carrinho e clica em "Comprar". O pedido é enviado ao WhatsApp da loja, onde a venda é finalizada.
 
+Item	Informação
+Início do projeto	19/08/2026
+Conclusão da versão 1.0	01/11/2026
+Catálogo atual	65 produtos em 15 categorias
+Hospedagem	Ainda não publicado
+2. Tecnologias
+Camada	Tecnologia	Uso no projeto
+Servidor	Python 3 + Flask	Rotas, páginas, busca e filtro por categoria
+Páginas	HTML5 + Jinja2	Modelos reutilizáveis (base.html, componentes)
+Estilo	CSS3 (Grid e Flexbox)	Layout responsivo e identidade visual
+Interatividade	JavaScript	Carrinho, busca, quantidades e envio ao WhatsApp
+Produção	Gunicorn	Servidor preparado para a futura hospedagem
+Versionamento	Git e GitHub	Histórico e backup do código
 
-Posteriormente Após as Correções [✔]
-Rodapé (Footer):
-Interatividade com JavaScript: Implementar funções básicas como cliques reais nos botões "Adicionar ao Carrinho" que atualizam um contador numérico no menu superior.
-Adição de produtos em oferta, produto, preço antigo e atual, botão
-sobre a loja, titulo, descrição
-diferenciais: entrega, pagamento,duvidas.
-Newsletter/ contato (parcialmente)
+As dependências estão em requirements.txt (Flask e Gunicorn).
 
+3. Funcionalidades
+Catálogo com 15 categorias preenchidas (a categoria Livros está reservada, ainda sem produtos).
+Filtro por categoria e busca que ignora maiúsculas e acentos (por exemplo, "eletronicos" encontra "Eletrônicos").
+Página inicial com produtos em destaque sorteados a cada visita.
+Carrinho de compras: adicionar, aumentar e diminuir quantidades, total calculado automaticamente. O carrinho fica salvo no navegador e não esvazia ao trocar de página.
+Finalização pelo WhatsApp: o pedido segue com os itens, as quantidades e o total.
+Páginas institucionais: Sobre, Contato e página de erro 404 personalizada.
+Responsivo: funciona em computador, tablet e celular.
+SEO básico: títulos e descrições por página, textos alternativos nas imagens e idioma pt-BR.
+Preços no formato brasileiro (R$ 35,00) por um filtro próprio do Flask.
+4. Estrutura do projeto
+Bueno-Tec-Site/
+├── app.py                 # Aplicação Flask: produtos, categorias e rotas
+├── produtos_exemplo.py    # Produtos de teste (desligados por padrão)
+├── requirements.txt       # Dependências
+├── templates/
+│   ├── base.html          # Estrutura comum (cabeçalho, carrinho, rodapé)
+│   ├── _componentes.html  # Peças reutilizáveis
+│   ├── index.html         # Página inicial
+│   ├── produtos.html      # Lista de produtos
+│   ├── sobre.html
+│   ├── contato.html
+│   └── 404.html
+└── static/
+    ├── css/style.css      # Estilos
+    ├── js/script.js       # Carrinho e interações
+    └── imagens/           # Logo, categorias e fotos dos produtos
+5. Como executar
 
- Bueno Tec — Tarefas concluídas [✔] ➜ data de conclusão da tarefa 29/08/2026 horario de conclusão 18:54
- Implementar campo de busca de produtos com JavaScript.
- Fazer a busca funcionar em tempo real, conforme o usuário digita.
- Configurar a busca para ignorar diferenças entre maiúsculas e minúsculas.
- Fazer produtos que não correspondem à pesquisa serem ocultados automaticamente.
- Adicionar funcionalidade “Ver todas” nas categorias.
- Criar expansão/ocultação das categorias extras com JavaScript.
- Alterar o texto entre “Ver todas →” e “Mostrar menos ↑”.
- Implementar contador do carrinho.
- Fazer os botões “Comprar Agora” funcionarem.
- Fazer os botões “Adicionar ao Carrinho” funcionarem.
- Fazer o contador do carrinho aumentar a cada produto adicionado.
- Criar feedback visual nos botões: “Adicionado”.
- Fazer o botão voltar ao texto original após alguns segundos.
- Implementar interação básica da Newsletter.
- Impedir o envio real do formulário da newsletter.
- Exibir “Cadastrado!” após o cadastro.
- Limpar o campo de e-mail após o cadastro.
- Fazer o botão da newsletter voltar ao estado original.
- Estruturar o rodapé (Footer).
- Adicionar seção Institucional.
- Adicionar seção Atendimento.
- Adicionar seção Redes sociais.
- Adicionar descrição da Bueno Tec no rodapé.
- Adicionar aviso de direitos autorais © 2026.
- Criar seção “Sobre a Bueno Tec”.
- Adicionar descrição da loja.
- Adicionar informações sobre qualidade, preço e variedade.
- Criar seção de diferenciais.
- Adicionar Entrega rápida.
- Adicionar Pagamento seguro.
- Adicionar Atendimento de qualidade.
- Criar seção de Ofertas da Semana.
- Adicionar produtos em oferta.
- Adicionar preço antigo.
- Adicionar preço promocional atual.
- Adicionar percentual de desconto.
- Adicionar botão “Adicionar ao Carrinho” nas ofertas.
- Melhorar a organização geral do HTML, CSS e JavaScript.
- Manter a responsividade para celular e telas menores.
+Requisitos: Python 3 instalado.
 
+bash
+# 1. Entrar na pasta do projeto
+cd Bueno-Tec-Site
 
-Tarefas realizadas hoje [✔] ➜ data de conclusão da tarefa 05/09/2026 horario de conclusão 19:24
- ✅ Organizamos a estrutura do projeto Flask.
-✅ Reorganizamos o index.html.
-✅ Criamos a separação correta entre templates, static, css, js e imagens.
-✅ Criamos o style.css praticamente do zero.
-✅ Estilizamos cabeçalho, busca, carrinho, navegação, banner, categorias, produtos, ofertas, sobre, diferenciais, newsletter e rodapé.
-✅ Adicionamos responsividade para telas menores.
-✅ Identificamos e corrigimos o erro 404 do CSS.
-✅ Confirmamos que o CSS está funcionando corretamente.
-⏳ Restaram alguns pequenos ajustes visuais para amanhã.
-⏭️ Próxima etapa: JavaScript, começando pelo carrinho de compras.
+# 2. (Opcional) criar ambiente virtual
+python -m venv .venv
+.venv\Scripts\activate          # Windows
 
+# 3. Instalar as dependências
+pip install -r requirements.txt
 
-Tarefas previstas para amanhã [⏳] data 08/09/2026 horario de conclusão 00:04
- Verificado o carregamento do script.js no index.html.
- Criada referência para o contador do carrinho.
- Criada referência para o valor total do carrinho.
- Criada referência para a área de itens do carrinho.
- Identificados os botões Adicionar ao carrinho.
- Adicionado evento de clique aos botões.
- Implementada identificação automática do produto selecionado.
- Implementada captura do nome do produto.
- Implementada captura do preço do produto.
- Implementada conversão do preço de R$ 35,00 para número.
- Criado objeto produtoCarrinho.
- Criado array carrinho.
- Implementado armazenamento dos produtos no array.
- Implementada exibição dos produtos dentro do carrinho.
- Removida automaticamente a mensagem "Seu carrinho está vazio" ao adicionar o primeiro produto.
- Implementado contador de produtos.
- Implementado cálculo do valor total.
- Implementada atualização do total na tela.
- Implementada identificação de produtos repetidos usando .find().
- Implementado controle de quantidade do mesmo produto.
- Implementado aumento da quantidade através de quantidade++.
- Implementada abertura do menu do carrinho.
- Implementado fechamento do menu do carrinho.
- Adicionada classe CSS .carrinho-menu.ativo.
- Testado o funcionamento do carrinho pelo console do navegador.
- Confirmado que um mesmo produto pode possuir uma quantidade em vez de criar vários objetos iguais.
- Conceitos de JavaScript praticados
- querySelector()
- querySelectorAll()
- forEach()
- addEventListener()
- closest()
- textContent
- trim()
- replace()
- Number()
- Arrays
- Objetos
- push()
- find()
- if / else
- Operador !
- Incremento ++
- innerHTML
- Template literals
- toFixed()
- classList.toggle()
+# 4. Iniciar o servidor
+python app.py
 
-Data: 09/09/2026
-Status: Em desenvolvimento
+Abra no navegador o endereço exibido no terminal (normalmente http://127.0.0.1:5000).
 
-✅ O que foi feito hoje
-Ajustes na seção de Categorias
-Trabalhamos na estrutura visual da seção.
-Ajustamos o posicionamento do título “Categorias”.
-Buscamos aproximar o layout do modelo de referência apresentado pelo usuário.
-Foi definida a ideia de utilizar as categorias em um formato mais visual e organizado, semelhante ao padrão de grandes lojas virtuais.
-Organização do cabeçalho das categorias
-Ajustamos o .cabecalho-categorias.
-Trabalhamos com flexbox para controlar:
-alinhamento;
-centralização;
-espaçamento;
-posição do título.
-Referência visual
-Utilizamos como referência o estilo apresentado de uma loja virtual.
-A intenção passou a ser deixar o Bueno Tec com uma aparência mais próxima de um e-commerce profissional, em vez de apenas uma página de estudos.
-Ajustes de layout
-Foram feitos testes com espaçamentos e posicionamento dos elementos.
-Alguns ajustes anteriores também foram realizados na organização das seções do site, incluindo a área de ofertas.
-Continuidade do projeto
-Mantivemos a estrutura atual de HTML + CSS + JavaScript + Flask/Python.
-O objetivo continua sendo evoluir o projeto gradualmente, sem simplesmente copiar um template pronto
+Importante: o site só funciona enquanto o terminal com python app.py estiver aberto. Após alterar o código, pare o servidor (Ctrl+C), inicie de novo e atualize a página com Ctrl+F5.
 
+6. Como adicionar produtos
 
-🔜 Próximas melhorias
+Os produtos ficam na lista PRODUTOS, em app.py. Para cadastrar um novo:
 
-Eu sugiro seguirmos nesta ordem:
+Salve a foto em static/imagens/.
+Copie um bloco { ... } existente e cole no fim da lista.
+Troque os dados:
+python
+{
+    "nome": 'Nome do produto',
+    "marca": '',
+    "categoria": 'Casa',            # use uma das categorias da lista CATEGORIAS
+    "descricao": 'Descrição curta e clara.',
+    "preco": 35.00,                 # ponto decimal, sem "R$"
+    "imagem": 'nome_do_arquivo.jpg',
+},
+Reinicie o servidor e confira a página do produto.
+7. Desenvolvimento
 
-1. 🛒 Finalizar visual das Categorias
-Ajustar tamanho dos cards.
-Ajustar imagens.
-Padronizar proporções.
-Melhorar espaçamento.
-Criar efeito hover.
-Fazer o layout funcionar bem no celular.
-2. 🏷️ Melhorar seção de Ofertas
-Padronizar os cards.
-Imagem do produto.
-Nome.
-Preço antigo.
-Preço promocional.
-Percentual de desconto.
-Botão Comprar ou Adicionar ao carrinho.
-3. 🧭 Melhorar o cabeçalho
-Logo Bueno Tec.
-Menu.
-Campo de pesquisa.
-Ícone/carrinho.
-Melhor adaptação para telas menores.
-4. 📱 Responsividade
+O projeto evoluiu em fases, sempre de forma gradual e sem copiar templates prontos.
 
-Testar o site em:
+Fase	Período	O que foi feito
+1. Base visual	19/08/2026	Layout inicial em HTML5 e CSS Grid: menu, banner de inauguração e grade de categorias responsiva
+2. Melhorias e SEO	Ago/2026	Ícones no lugar de emojis, hierarquia de títulos, tags semânticas, textos alternativos, paleta de cores e logomarca
+3. Interatividade	29/08/2026	Busca em tempo real, "Ver todas" nas categorias, botões de compra, newsletter, rodapé, seções Sobre, diferenciais e Ofertas
+4. Migração para Flask	05/09/2026	Separação em templates, static/css, static/js e static/imagens; style.css refeito; responsividade
+5. Carrinho	08/09/2026	Contador, total, quantidade por produto, abertura e fechamento do menu do carrinho
+6. Visual de loja profissional	09/09/2026	Reorganização do cabeçalho e das categorias, inspirada em grandes lojas virtuais
+7. Catálogo real e fechamento da v1.0	Out–Nov/2026	Cadastro de 65 produtos reais com descrição, preço de venda e foto tratada; carrinho com envio ao WhatsApp; revisão geral
+Decisões de projeto
+Paleta de cores preservada em todas as etapas, mantendo a identidade da loja.
+Produtos em uma lista Python (sem banco de dados), simples de editar nesta fase.
+Fotos padronizadas em 600×600 px, fundo branco, sem marca d'água de outros vendedores.
+Produtos de exemplo desligados por padrão (MOSTRAR_EXEMPLOS = False); só os produtos reais aparecem.
+Modo debug desligado por padrão, para não expor o código quando o site estiver na internet.
+8. Problemas e bugs corrigidos
+#	Problema	Causa	Solução
+1	CSS não carregava (erro 404) após a migração para Flask	Caminho do arquivo incorreto; o Flask serve arquivos pela pasta static	Ajuste dos caminhos para static/css/style.css; confirmado o funcionamento
+2	Imagens e links quebrados	Caminhos absolutos do computador no HTML	Caminhos relativos e uso das pastas do Flask
+3	Carrinho esvaziava ao trocar de página	O carrinho existia só na memória da página	Carrinho salvo no navegador
+4	Produtos duplicados no carrinho	Cada clique criava um item novo	Produto repetido passa a aumentar a quantidade (find + contador)
+5	Busca não encontrava palavras com acento	Comparação literal de texto	Função que ignora acentos e maiúsculas
+6	Produtos novos não apareciam no site	O servidor antigo continuava ativo com o código anterior	Parar o servidor, reiniciar e usar Ctrl+F5 (ou janela anônima)
+7	Fotos de fornecedores com marcas d'água, faixas e mãos	Imagens copiadas direto dos anúncios	Escolha de fotos limpas, recorte e remoção das áreas com marca
+8	Modo debug exposto	Servidor iniciava sempre em debug	Debug só liga por variável de ambiente (FLASK_DEBUG=1)
 
-computador;
-notebook;
-tablet;
-celular.
+Revisão: os itens 1 a 5 e 8 foram montados a partir do diário de desenvolvimento e do código atual. Confirme se descrevem o que aconteceu e ajuste a causa ou a data, se necessário.
 
-E corrigir elementos que quebrarem ou ficarem desalinhados.
- 
- 
+9. Próximos passos
+
+Curto prazo
+
+Completar categorias com poucos itens (Infantil, Bolsas, Móveis) e preencher Livros.
+Atualizar o texto da página Sobre com a história real da loja.
+Botão que leve direto ao grupo do WhatsApp da loja.
+
+Médio prazo
+
+Publicar o site em um servidor (opções avaliadas: PythonAnywhere ou Render) e registrar um domínio próprio.
+Divulgar nas redes sociais da loja.
+Deixar o site mais leve e estável (otimização de imagens e carregamento).
+
+Longo prazo
+
+Ampliar muito o catálogo.
+Melhorar o carrinho e o fluxo de pedidos.
+Evoluir a interface para um visual mais sofisticado e profissional.
+Migrar os produtos para um banco de dados e criar uma área administrativa para cadastrar itens sem editar código.
+10. Autor
+
+Leonardo Henrique Bueno, administrador e estudante de Engenharia de Software. Projeto desenvolvido como loja real e como portfólio de programação (Python, Flask, HTML, CSS e JavaScript).
+
+GitHub: buenor877-ux
